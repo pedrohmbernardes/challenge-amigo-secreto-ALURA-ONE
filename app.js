@@ -28,6 +28,12 @@ function exibirResultado(idTag, texto, nomeDoAmigo) {
     idDaTag.innerHTML = `${texto} ${nomeDoAmigo}`;
 }
 
+// Funcao definida para limpar o resultado, caso usuario limpe a lista de nomes.
+function limparResultado() {
+    let resultado = document.getElementById('resultado');
+    resultado.innerHTML = '';
+}
+
 // Funcao definida para adicionar um amigo na tela/lista de amigos.
 function adicionarAmigo(){
 
@@ -62,8 +68,15 @@ function sortearAmigo() {
         alert('Nenhum nome foi incluso. Digite pelo menos 1 nome.');
     } else {
         indiceSorteado = Math.floor(Math.random() * tamanhoDaListaDeAmigos);
-        exibirResultado('resultado', 'O amigo secreto sorteado é: ', amigos[indiceSorteado]);
-        removerListaDeNomes('listaAmigos');
+        exibirResultado('resultado', '🥳 O amigo secreto sorteado foi: ', amigos[indiceSorteado]);
     }
 
+}
+
+//
+function limparLista() {
+    removerListaDeNomes('listaAmigos');
+    limparInput();
+    limparResultado();
+    amigos = [];
 }
