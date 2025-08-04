@@ -1,12 +1,11 @@
 /*O principal objetivo deste desafio é fortalecer suas habilidades em lógica de programação. 
 Aqui você deverá desenvolver a lógica para resolver o problema.*/
 
+// Definicao das variaveis globais do programa.
 let amigos = [];
 let tamanhoDaListaDeAmigos;
-let arrayHTML = '';
 
-console.log(tamanhoDaListaDeAmigos);
-
+// Funcao para exibicao dos nomes dos amigos na lista - a partir da tag <ul> cria-se uma tag filha <li> para listar os nomes.
 function exibirNomeAmigoNaLista(tag, nomeDoAmigo) {
 
     let listaOrdenadaAmigos = document.createElement('li');
@@ -16,17 +15,20 @@ function exibirNomeAmigoNaLista(tag, nomeDoAmigo) {
     listaAmigos.appendChild(listaOrdenadaAmigos);
 }
 
+// Funcao para limpar os nomes na tela apos o sorteio do amigo.
 function removerListaDeNomes(tag) {
     let listaAmigos = document.getElementById(tag);
     listaAmigos.innerHTML = '';
 }
 
+// Funcao definida para a exibicao do resultado na tela.
 function exibirResultado(idTag, texto, nomeDoAmigo) {
     
     let idDaTag = document.getElementById(idTag);
     idDaTag.innerHTML = `${texto} ${nomeDoAmigo}`;
 }
 
+// Funcao definida para adicionar um amigo na tela/lista de amigos.
 function adicionarAmigo(){
 
     let inputAmigos = document.getElementById('amigo').value;
@@ -40,11 +42,9 @@ function adicionarAmigo(){
         tamanhoDaListaDeAmigos = amigos.length
     }
 
-    console.log(amigos);
-    console.log(inputAmigos);
-
 }
 
+// Funcao definida para limpar o input apos adicionar o amigo na tela/lista.
 function limparInput() {
 
     entradaAmigo = document.getElementById('amigo');
@@ -52,6 +52,7 @@ function limparInput() {
 
 }
 
+// Funcao definida para sortear um amigo/nome que esta na lista de amigos.
 function sortearAmigo() {
     
     if (amigos == '') {
@@ -59,13 +60,7 @@ function sortearAmigo() {
     } else {
         indiceSorteado = Math.floor(Math.random() * tamanhoDaListaDeAmigos);
         exibirResultado('resultado', 'O amigo secreto sorteado é: ', amigos[indiceSorteado]);
-
         removerListaDeNomes('listaAmigos');
-
-        console.log('console log - indice sorteado:');
-        console.log(indiceSorteado);
-        console.log('console log - tamanho lista de amigos');
-        console.log(tamanhoDaListaDeAmigos);
     }
 
 }
