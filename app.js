@@ -35,6 +35,9 @@ function adicionarAmigo(){
 
     if (inputAmigos == '') {
         alert('Por favor, insira um nome.')
+    } else if (amigos.includes(inputAmigos)) {
+        alert('Esse nome já está na lista, digite outro.');
+        limparInput();
     } else {
         amigos.push(inputAmigos);
         limparInput();
@@ -44,7 +47,7 @@ function adicionarAmigo(){
 
 }
 
-// Funcao definida para limpar o input apos adicionar o amigo na tela/lista.
+// Funcao definida para limpar o input do nome do amigo na tela/lista.
 function limparInput() {
 
     entradaAmigo = document.getElementById('amigo');
