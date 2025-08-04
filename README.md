@@ -29,8 +29,7 @@ Para executar este projeto em sua máquina local, siga os passos abaixo:
 
 1.  **Clone o repositório** (caso esteja no GitHub) ou baixe os arquivos do projeto.
     ```bash
-    git clone [https://seu-link-para-o-repositorio.git](https://seu-link-para-o-repositorio.git)
-    ```
+    git clone [https://github.com/pedrohmbernardes/challenge-amigo-secreto-ALURA-ONE.git]
 2.  Navegue até o diretório do projeto.
 3.  Abra o arquivo `index.html` em seu navegador de preferência.
 
